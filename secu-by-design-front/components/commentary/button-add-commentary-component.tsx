@@ -14,8 +14,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "react-hot-toast";
-import {uploadCommentary} from "@/lib/action/mango-action";
-import {addCommentary} from "@/lib/interfaces/commentary-interce";
+import {uploadCommentary} from "@/lib/action/mongo-action";
+import {addCommentary} from "@/lib/interfaces/commentary-interface";
 
 
 export default function ButtonAddCommentaryComponent({

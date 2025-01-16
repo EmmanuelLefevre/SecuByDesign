@@ -2,7 +2,7 @@
 
 import {CollectionName} from '@/lib/collection.enum';
 import {connectToDatabase} from '@/lib/mongodb';
-import {addCommentary, getCommentary} from "@/lib/interfaces/commentary-interce";
+import {addCommentary, getCommentary} from "@/lib/interfaces/commentary-interface";
 
 export async function uploadCommentary(commentary: addCommentary[]): Promise<{ ok: number; insertedCount: number }> {
     try {

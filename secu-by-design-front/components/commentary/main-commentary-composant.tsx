@@ -1,6 +1,6 @@
-import ButtonAddCommentaryComponent from "@/composant/commentary/button-add-commentary-component";
-import {getCommentary} from "@/lib/interfaces/commentary-interce";
-import AllCommentaryComponent from "@/composant/commentary/all-commentary-component";
+import ButtonAddCommentaryComponent from "@/components/commentary/button-add-commentary-component";
+import {getCommentary} from "@/lib/interfaces/commentary-interface";
+import AllCommentaryComponent from "@/components/commentary/all-commentary-component";
 
 
 export default function MainCommentaryComposant({username, Allcommentary} :{username :string, Allcommentary: getCommentary[]}) {

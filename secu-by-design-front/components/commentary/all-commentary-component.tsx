@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { getCommentary } from "@/lib/interfaces/commentary-interce";
+import { getCommentary } from "@/lib/interfaces/commentary-interface";
 
 type AllCommentaryComponentProps = {
     Allcommentary: getCommentary[];
@@ -7,13 +7,13 @@ type AllCommentaryComponentProps = {
 
 export default function AllCommentaryComponent({ Allcommentary }: AllCommentaryComponentProps) {
     // Tri des commentaires de la date la plus récente à la plus ancienne
-    const sortedCommentaries = [...Allcommentary].sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    const sortedCommentaries :getCommentary[] = [...Allcommentary].sort(
+        (a :getCommentary, b :getCommentary) :number => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
     return (
         <div className="flex flex-col gap-4">
-            {sortedCommentaries.map((commentary) => (
+            {sortedCommentaries.map((commentary :getCommentary) => (
                 <Card key={commentary._id} className="shadow-lg">
                     <CardHeader>
                         <h2 className="text-lg font-bold">{commentary.subject}</h2>

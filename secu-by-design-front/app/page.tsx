@@ -1,8 +1,8 @@
 import {currentUser} from "@clerk/nextjs/server";
-import MainCommentaryComposant from "@/composant/commentary/main-commentary-composant";
+import MainCommentaryComposant from "@/components/commentary/main-commentary-composant";
 import {SignIn} from "@clerk/nextjs";
-import {getAllCommentary} from "@/lib/action/mango-action";
-import { getCommentary} from "@/lib/interfaces/commentary-interce";
+import {getAllCommentary} from "@/lib/action/mongo-action";
+import { getCommentary} from "@/lib/interfaces/commentary-interface";
 
 export default async function Home() {
     const user = await currentUser();
