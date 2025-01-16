@@ -7,6 +7,8 @@ import { getCommentary} from "@/lib/interfaces/commentary-interface";
 export default async function Home() {
     const user = await currentUser();
 
+    console.log("User clerk info", user)
+
     if (!user) {
         return (
             <div className="flex items-center justify-center min-h-screen">
