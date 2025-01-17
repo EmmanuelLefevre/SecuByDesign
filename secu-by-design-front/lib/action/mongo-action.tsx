@@ -1,10 +1,17 @@
 'use server'
 
+import {addCommentary, getCommentary} from "@/lib/interfaces/commentary-interface";
 import {CollectionName} from '@/lib/collection.enum';
 import {connectToDatabase} from '@/lib/mongodb';
-import {addCommentary, getCommentary} from "@/lib/interfaces/commentary-interface";
+import {currentUser} from '@clerk/nextjs/server';
 
 export async function uploadCommentary(commentary: addCommentary[]): Promise<{ ok: number; insertedCount: number }> {
+
+    const user = await currentUser();
+    if (!user) {
+        throw new Error('Unauthorized');
+    }
+
     try {
         const db = await connectToDatabase();
 
